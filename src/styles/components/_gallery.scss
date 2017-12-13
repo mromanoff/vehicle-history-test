@@ -11,6 +11,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: $margin-md;
+  min-height: 100vh;
 
   @include element('item') {
     img {

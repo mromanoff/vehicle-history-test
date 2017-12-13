@@ -62,7 +62,7 @@ class Categories extends Component {
 
         {this.state.isLoading && <Loader />}
         {this.state.photos.length > 0 && (
-          <div>
+          <div className={this.state.isLoading ? 'loading' : 'loaded'}>
             <Pagination {...this.state} onChange={this.handlePagination} />
             <div className="module gallery">
               {this.state.photos.map(photo => (

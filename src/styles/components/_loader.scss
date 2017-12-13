@@ -27,6 +27,24 @@
   animation: fill 2s infinite ease-in;
 }
 
+.loading {
+  opacity: 0;
+  //animation: opacity 2s infinite ease-in;
+}
+
+.loaded {
+  animation: opacity 400ms ease-in;
+}
+
+@keyframes  opacity {
+  0% {
+   opacity: 0;
+  }
+  100% {
+   opacity: 1;
+  }
+}
+
 @keyframes fill {
   0% {
     height: 0;

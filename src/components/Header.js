@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
+import Logo from './Logo';
 
 class Header extends Component {
   render() {
     return (
       <header role="banner" className="header">
         <h1 className="header__logo">
-          <a
-            href="/"
-            className="header__link--exact-active header__link--active"
-          >
-            <img src="/" alt="logo" className="full-width" />
-          </a>
+          <Logo/>
+          <span>VehicleHistory code test</span>
         </h1>
       </header>
     );
