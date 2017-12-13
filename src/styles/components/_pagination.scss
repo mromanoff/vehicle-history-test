@@ -7,54 +7,106 @@
    ========================================================================== */
 
 .pagination {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
+}
+
+.pagination > li {
+  display: inline;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background-color: $color-gray-light;
+  font-size: $font-xs;
+  color: $color-white;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  text-decoration: none;
+  background: var(--color-brand-primary5);
+  border: var(--Button-border-width) solid var(--color-brand-primary5);
+  color:$color-white;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  width: 46px;
+  height: 46px;
+  font-weight: 300;
+  transition: background-color 100ms ease-out 100ms;
+  border-radius: 50%;
 
-  @include element('item') {
-    margin: 0 $margin-xs;
-    list-style-type: none;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background-color: $color-gray-light;
-    font-size: $font-xs;
-    color: $color-white;
-
-    $icons-transition: background, color;
-    @include transition($icons-transition);
-
-    &:hover {
-      background-color: $color-gray;
-    }
-
-    @include modifier('active') {
-      background-color: $color-brand-secondary5;
-    }
-
-    //TODO: this modifier does't exist in pagination component lib
-    //https://github.com/lokyoung/vuejs-paginate/issues/56
-    @include modifier('disabled') {
-      background-color: $color-gray-light;
-      color: $color-gray;
-    }
-    //TODO: temp fix
-    &.disabled {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    a {
-      line-height: 40px;
-      display: block;
-      color: $color-white;
-      text-decoration: none;
-      &:hover {
-        text-decoration: none;
-      }
-    }
+  &:hover {
+    background-color: color($color-brand-primary1 alpha(-30%));
   }
 }
+
+.pagination > li.active {
+  font-weight: 700;
+  color: $color-white;
+  background-color: $color-brand-primary5;
+}
+
+.pagination > li.disabled {
+  display: none;
+}
+
+//
+//.pagination {
+//  text-align: center;
+//  margin: 0;
+//  padding: 0;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//
+//  @include element('item') {
+//    margin: 0 $margin-xs;
+//    list-style-type: none;
+//    height: 40px;
+//    width: 40px;
+//    border-radius: 50%;
+//    background-color: $color-gray-light;
+//    font-size: $font-xs;
+//    color: $color-white;
+//
+//    $icons-transition: background, color;
+//    @include transition($icons-transition);
+//
+//    &:hover {
+//      background-color: $color-gray;
+//    }
+//
+//    @include modifier('active') {
+//      background-color: $color-brand-secondary5;
+//    }
+//
+//    //TODO: this modifier does't exist in pagination component lib
+//    //https://github.com/lokyoung/vuejs-paginate/issues/56
+//    @include modifier('disabled') {
+//      background-color: $color-gray-light;
+//      color: $color-gray;
+//    }
+//    //TODO: temp fix
+//    &.disabled {
+//      opacity: 0;
+//      pointer-events: none;
+//    }
+//
+//    a {
+//      line-height: 40px;
+//      display: block;
+//      color: $color-white;
+//      text-decoration: none;
+//      &:hover {
+//        text-decoration: none;
+//      }
+//    }
+//  }
+//}

@@ -1,0 +1,24 @@
+/**
+ * components/_category-picker.scss
+ */
+
+/* ==========================================================================
+   Category picker
+   ========================================================================== */
+
+.category-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > li {
+    color: $color-white;
+    background-color: $color-brand-secondary3;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  & > li.active {
+    background-color: $color-brand-secondary2;
+  }
+}

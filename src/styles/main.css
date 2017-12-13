@@ -2345,39 +2345,47 @@ hr {
    Pagination
    ========================================================================== */
 .pagination {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 0;
-  padding: 0;
+  padding: 0; }
+
+.pagination > li {
+  display: inline;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background-color: #999999;
+  font-size: 0.75rem;
+  color: #ffffff; }
+  .pagination > li:last-child {
+    margin-right: 0; }
+
+.pagination > li > a,
+.pagination > li > span {
+  text-decoration: none;
+  background: var(--color-brand-primary5);
+  border: var(--Button-border-width) solid var(--color-brand-primary5);
+  color: #ffffff;
   display: flex;
   align-items: center;
-  justify-content: center; }
-  .pagination__item {
-    margin: 0 0.25rem;
-    list-style-type: none;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background-color: #999999;
-    font-size: 0.75rem;
-    color: #ffffff;
-    transition: background 300ms ease-out,color 300ms ease-out; }
-    .pagination__item:hover {
-      background-color: #555555; }
-    .pagination__item--active {
-      background-color: #ff652f; }
-    .pagination__item--disabled {
-      background-color: #999999;
-      color: #555555; }
-    .pagination__item.disabled {
-      opacity: 0;
-      pointer-events: none; }
-    .pagination__item a {
-      line-height: 40px;
-      display: block;
-      color: #ffffff;
-      text-decoration: none; }
-      .pagination__item a:hover {
-        text-decoration: none; }
+  justify-content: center;
+  text-align: center;
+  width: 46px;
+  height: 46px;
+  font-weight: 300;
+  transition: background-color 100ms ease-out 100ms;
+  border-radius: 50%; }
+  .pagination > li > a:hover,
+  .pagination > li > span:hover {
+    background-color: color(#94090D opacity(-30%)); }
+
+.pagination > li.active {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #FFA000; }
+
+.pagination > li.disabled {
+  display: none; }
 
 /**
  * components/_gallery.scss
@@ -2391,12 +2399,12 @@ hr {
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem; }
   .gallery__item img {
-    transition: all 300ms ease-out;
+    transition: opacity 300ms ease-out;
     width: 100%;
     height: auto;
     opacity: 1; }
     .gallery__item img:hover {
-      transition: all 300ms ease-out;
+      transition: opacity 300ms ease-out;
       opacity: 0.9; }
   .gallery__item h6 {
     font-weight: 400;
@@ -2623,6 +2631,24 @@ textarea {
     transform: rotate(360deg); }
   100% {
     transform: rotate(360deg); } }
+
+/**
+ * components/_category-picker.scss
+ */
+/* ==========================================================================
+   Category picker
+   ========================================================================== */
+.category-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .category-picker > li {
+    color: #ffffff;
+    background-color: #647062;
+    padding: 0.5rem 1rem;
+    cursor: pointer; }
+  .category-picker > li.active {
+    background-color: #aebc93; }
 
 /**
  * components/_overvie-page.scss

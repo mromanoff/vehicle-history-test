@@ -14,7 +14,7 @@
 
   @include element('item') {
     img {
-      $image-transition: all;
+      $image-transition: opacity;
       @include transition($image-transition);
 
       width: 100%;

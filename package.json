@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "node-sass-chokidar": "^0.0.3",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-js-pagination": "^3.0.0",
     "react-scripts": "1.0.17"
   },
   "scripts": {
@@ -13,8 +15,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "eject": "react-scripts eject"
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive"
   }
 }
