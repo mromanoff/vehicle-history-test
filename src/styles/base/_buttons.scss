@@ -1,0 +1,28 @@
+// scss-lint:disable PropertySpelling
+
+/**
+ * base/_buttons.scss
+ */
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"] {
+  display: inline-block;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+// Remove the focus outline
+button:focus,
+[type="button"]:focus,
+[type="submit"]:focus,
+[type="reset"]:focus { outline: 0; }

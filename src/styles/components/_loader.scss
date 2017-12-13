@@ -1,0 +1,58 @@
+/**
+ * components/_loader.scss
+ */
+
+/* ==========================================================================
+   Loader
+   ========================================================================== */
+
+.loader-wrapper {
+  display: flex;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  height: 40px;
+  width: 40px;
+  border: 4px solid $color-brand-primary5;
+  transform: rotate(180deg);
+  animation: roll 2s infinite ease-out;
+}
+
+.loader-inner {
+  background: $color-brand-primary5;
+  height: 20px;
+  animation: fill 2s infinite ease-in;
+}
+
+@keyframes fill {
+  0% {
+    height: 0;
+  }
+  40% {
+    height: 36px;
+  }
+  60% {
+    height: 36px;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(180deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  60% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,74 @@
+/**
+ * components/_footer.scss
+ */
+
+/* ==========================================================================
+   Page footer
+   ========================================================================== */
+
+.footer {
+  color: $color-footer-text;
+  background-color: $color-footer-background;
+  min-height: 270px;
+  padding: $padding-lg 0;
+  text-align: center;
+
+  h4 {
+    letter-spacing: 2.5px;
+    color: $color-footer-text;
+    font-weight: 200;
+  }
+
+  hr {
+    border-color: $color-brand-secondary3;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 $margin-sm;
+  }
+
+  @include element('social-icons') {
+    margin-bottom: $margin-lg;
+    padding: 0;
+
+    a {
+      display: block;
+      width: 3.6rem;
+      height: 3.6rem;
+      line-height: 3.6rem;
+      border-radius: 3.6rem;
+      border: 2px solid $color-footer-text;
+      color: $color-footer-text;
+      font-size: $font-lg;
+      text-decoration: none;
+
+      $icons-transition: background, color;
+      @include transition($icons-transition);
+
+      &:hover {
+        background-color: rgba($color-brand-primary5, 0.4);
+        color: $color-footer-text;
+      }
+    }
+  }
+
+  @include element('links') {
+    letter-spacing: 1.5px;
+    margin: $margin-md 0;
+    padding: 0;
+
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: $font-xs;
+      color: $color-footer-text;
+    }
+  }
+
+  @include element('copyright') {
+    font-size: $font-xs;
+    margin: 0;
+  }
+}

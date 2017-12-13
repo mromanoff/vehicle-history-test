@@ -1,0 +1,23 @@
+/**
+ * components/_main.scss
+ */
+
+/* ==========================================================================
+   Imports
+   ========================================================================== */
+
+@import "header";
+@import "footer";
+@import "buttons";
+@import "pagination";
+@import "gallery";
+@import "comments";
+@import "hero";
+@import "forms";
+@import "alerts";
+@import "loader";
+
+// pages
+@import "overview-page";
+@import "contact-page";
+

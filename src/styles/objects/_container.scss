@@ -1,0 +1,24 @@
+/**
+ * objects/_container.scss
+ */
+
+/* ==========================================================================
+   Module
+   ========================================================================== */
+
+
+
+//TODO: container widths is in settings/widths.scss
+
+.container {
+  padding: 0 $padding-md;
+}
+
+// @ Extra large screens limit container grow more the $extra-large-screen-min
+@include bp-more-than ($extra-large-screen-min) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $extra-large-screen-min;  // don't let it grow after this point
+  }
+}

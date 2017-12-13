@@ -1,0 +1,122 @@
+/**
+ * components/_hero.scss
+ */
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+
+.hero {
+  position: relative;
+
+  @include element('item') {
+    background: transparent;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    min-height: 300px;
+
+    img, picture {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  @include element('title') {
+    font-size: $font-xl;
+    color: $color-white;
+    font-weight: 200;
+    padding: 15px 20px;
+    margin: 0;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    text-align: center;
+
+    $transition: all;
+    @include transition($transition);
+    background: rgba(0, 0, 0, 0.35);
+
+    &:hover {
+      @include transition($transition);
+      opacity: 0;
+    }
+
+    small {
+      display: block;
+      font-size: $font-xs;
+      font-weight: bold;
+      margin: $margin-xs 0;
+    }
+
+    @include bp-more-than($medium-screen-min) {
+        font-size: $font-xl * 1.5;
+        width: 600px;
+        padding: 20px 20px;
+    }
+
+    @include bp-more-than($large-screen-min) {
+      font-size: $font-xl * 2;
+      width: 800px;
+    }
+  }
+
+  @include element('navigation') {
+    position: absolute;
+    color: white;
+    width: 80px;
+    height: 180px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    padding: 0;
+    zoom: 1;
+    font-size: 56px;
+    @include opacity(0.8);
+    line-height: 180px;
+
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+
+    $transition: color;
+    @include transition($transition);
+
+    &:hover {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    @include modifier('prev') {
+      left: 0;
+    }
+
+    @include modifier('next') {
+      right: 0;
+    }
+  }
+}
+
+.owl-theme .owl-dots {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+
+  .owl-dot {
+    span {
+      background: $color-white;
+      height: 0.8rem;
+      width: 0.8rem;
+    }
+  }
+
+  .owl-dot.active span,
+  .owl-dot:hover span {
+    background: $color-gray-light;
+  }
+}
+

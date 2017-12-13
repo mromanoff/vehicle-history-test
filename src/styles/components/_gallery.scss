@@ -1,0 +1,47 @@
+/**
+ * components/_gallery.scss
+ */
+
+/* ==========================================================================
+   Gallery
+   ========================================================================== */
+
+.gallery {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: $margin-md;
+
+  @include element('item') {
+    img {
+      $image-transition: all;
+      @include transition($image-transition);
+
+      width: 100%;
+      height: auto;
+      //border: 1px solid $color-gray-darker;
+      opacity: 1;
+      &:hover {
+        @include transition($image-transition);
+        opacity: 0.9;
+      }
+    }
+
+    h6 {
+      font-weight: 400;
+      margin: $margin-sm 0;
+    }
+  }
+}
+
+@include bp-more-than ($medium-screen-min) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@include bp-more-than ($large-screen-min) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

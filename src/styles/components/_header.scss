@@ -1,0 +1,157 @@
+/**
+ * components/_header.scss
+ */
+
+/* ==========================================================================
+   Page header
+   ========================================================================== */
+
+$nav-height: 50px;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  height: $nav-height;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-color: $color-navigation-background;
+
+  @include element('menu') {
+    position: absolute;
+    height: $nav-height;
+    right: 0;
+    z-index: 901;
+
+    $transition: all;
+    @include transition($transition);
+
+    .btn-hamburger {
+      display: block;
+      padding-right: $padding-md;
+      padding-left: $padding-md;
+      text-decoration: none;
+      line-height: $nav-height;
+      color: $color-gray-lighter;
+    }
+  }
+
+  @include element('logo') {
+    width: 160px;
+    margin: 0 0 0 $margin-md;
+  }
+
+  @include element('navigation') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    $transition: all;
+    @include transition($transition);
+
+    @include modifier('open') {
+      height: 100vh;
+      padding-top: $nav-height;
+    }
+  }
+
+  @include element('links') {
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    $transition: all;
+    @include transition($transition);
+
+    @include modifier('active') {
+      color: $color-navigation-links-active;
+      height: 100vh;
+      padding-top: $nav-height * 2;
+      background-color: $color-navigation-background-active;
+    }
+  }
+
+  @include element('link') {
+    display: block;
+    text-align: center;
+    margin-bottom: $margin-md;
+    color: $color-navigation-links;
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-decoration: none;
+
+    $link-transition: color;
+    @include transition($link-transition);
+
+    @include attention() {
+      color: $color-white;
+    }
+
+    @include modifier('active') {
+      color: $color-navigation-links-active;
+    }
+  }
+}
+
+@media (min-width: $medium-screen-min) {
+  $nav-height: 130px;
+
+  .header {
+    height: $nav-height;
+    flex-direction: column;
+    align-items: normal;
+    justify-content: center;
+
+    @include element('logo') {
+      width: 311px;
+      margin: 0 0 $margin-md $margin-lg;
+    }
+
+    @include element('navigation') {
+      position: static;
+      margin-left: $margin-lg;
+    }
+
+    @include element('links') {
+      height: auto;
+    }
+
+    @include element('link') {
+      display: inline-block;
+      text-align: left;
+
+      font-size: 13px;
+      margin: 0 $margin-md 0 0;
+      letter-spacing: 2.5px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (min-width: $large-screen-min) {
+  $nav-height: 60px;
+
+  .header {
+    height: $nav-height;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+
+    @include element('logo') {
+      width: 206px;
+      margin: 0 0 0 $margin-lg;
+    }
+
+    @include element('navigation') {
+      position: static;
+      width: auto;
+    }
+
+    @include element('link') {
+      line-height: $nav-height;
+    }
+  }
+}
