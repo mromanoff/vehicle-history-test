@@ -5,7 +5,7 @@ const categories = ['Animals', 'Transportation', 'Nature', 'Sport'];
 
 class CategoryPicker extends Component {
   static propTypes = {
-    category: PropTypes.string.isRequired,
+    currentCategory: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
   };
 
@@ -19,7 +19,7 @@ class CategoryPicker extends Component {
               <li
                 key={category}
                 className={`list-inline-item ${
-                  this.props.category === category ? 'active' : ''
+                  this.props.currentCategory === category ? 'active' : ''
                 }`}
                 onClick={() => this.props.onChange(category)}
               >

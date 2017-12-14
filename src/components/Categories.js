@@ -9,7 +9,7 @@ class Categories extends Component {
     super();
     this.state = {
       isLoading: false,
-      category: null,
+      currentCategory: '',
       photos: [],
       page: 1,
     };
@@ -21,7 +21,7 @@ class Categories extends Component {
       try {
         const response = await fetch(
           `https://api.500px.com/v1/photos?feature=popular&rpp=20&image_size=440&exclude=Nude&only=${
-            this.state.category
+            this.state.currentCategory
           }&page=${
             this.state.page
           }&consumer_key=vRemLRvbgOrkPsJhzeoGdSNHiuC22aZ4TgwgXQXK`,
@@ -44,8 +44,8 @@ class Categories extends Component {
     })();
   };
 
-  handleCategory = category => {
-    this.setState({ category, page: 1 }, this.fetchPhotos);
+  handleCategory = currentCategory => {
+    this.setState({ currentCategory, page: 1 }, this.fetchPhotos);
   };
 
   handlePagination = page => {
@@ -56,7 +56,7 @@ class Categories extends Component {
     return (
       <section>
         <CategoryPicker
-          category={this.state.category}
+          currentCategory={this.state.currentCategory}
           onChange={this.handleCategory}
         />
 
