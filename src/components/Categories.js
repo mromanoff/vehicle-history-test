@@ -64,7 +64,8 @@ class Categories extends Component {
         {this.state.photos.length > 0 && (
           <div className={this.state.isLoading ? 'loading' : 'loaded'}>
             <Pagination {...this.state} onChange={this.handlePagination} />
-            <div className="module gallery">
+
+            <div className="module gallery test">
               {this.state.photos.map(photo => (
                 <Photo key={photo.id} photo={photo} />
               ))}

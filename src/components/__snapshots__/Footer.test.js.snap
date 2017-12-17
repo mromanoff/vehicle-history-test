@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<footer
+  className="footer"
+  role="contentinfo"
+>
+  <ul
+    className="footer__social-icons"
+  >
+    <li>
+      <a
+        className="icon-twitter"
+        href="#"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="twitter"
+      />
+    </li>
+    <li>
+      <a
+        className="icon-github2"
+        href="#"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="github"
+      />
+    </li>
+    <li>
+      <a
+        className="icon-linkedin"
+        href="#"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="linkedin"
+      />
+    </li>
+  </ul>
+  <ul
+    className="footer__links"
+  >
+    <li
+      className="active"
+    >
+      <a
+        className="header__link--exact-active header__link--active"
+        href="#"
+      >
+        Overview
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="#"
+      >
+        Work
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="#"
+      >
+        Photography
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="#"
+      >
+        Contact
+      </a>
+    </li>
+  </ul>
+  <hr />
+  <p
+    className="footer__copyright"
+  >
+    © Copyright Romanoff.io 1998 — 2017 All Right Reserved.
+  </p>
+</footer>
+`;

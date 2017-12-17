@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Photo renders correctly 1`] = `
+<div
+  className="gallery__item"
+>
+  <img
+    alt="test"
+    className="full-width"
+    src="/test.png"
+  />
+</div>
+`;

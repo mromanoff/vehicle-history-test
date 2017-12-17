@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories renders correctly 1`] = `
+<section>
+  <section>
+    <h1
+      className="title"
+    >
+      Pick category
+    </h1>
+    <ul
+      className="list-unstyled list-inline category-picker"
+    >
+      <li
+        className="list-inline-item "
+        onClick={[Function]}
+      >
+        Animals
+      </li>
+      <li
+        className="list-inline-item "
+        onClick={[Function]}
+      >
+        Transportation
+      </li>
+      <li
+        className="list-inline-item "
+        onClick={[Function]}
+      >
+        Nature
+      </li>
+      <li
+        className="list-inline-item "
+        onClick={[Function]}
+      >
+        Sport
+      </li>
+    </ul>
+  </section>
+</section>
+`;
