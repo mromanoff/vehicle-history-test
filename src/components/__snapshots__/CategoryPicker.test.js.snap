@@ -7,33 +7,37 @@ exports[`CategoryPicker renders correctly 1`] = `
   >
     Pick category
   </h1>
-  <ul
-    className="list-unstyled list-inline category-picker"
+  <div
+    className="module category-picker"
   >
-    <li
-      className="list-inline-item active"
+    <Button
+      className="btn btn--tertiary btn--sm btn--tertiary-active"
+      key="Animals"
       onClick={[Function]}
     >
       Animals
-    </li>
-    <li
-      className="list-inline-item "
+    </Button>
+    <Button
+      className="btn btn--tertiary btn--sm "
+      key="Transportation"
       onClick={[Function]}
     >
       Transportation
-    </li>
-    <li
-      className="list-inline-item "
+    </Button>
+    <Button
+      className="btn btn--tertiary btn--sm "
+      key="Nature"
       onClick={[Function]}
     >
       Nature
-    </li>
-    <li
-      className="list-inline-item "
+    </Button>
+    <Button
+      className="btn btn--tertiary btn--sm "
+      key="Sport"
       onClick={[Function]}
     >
       Sport
-    </li>
-  </ul>
+    </Button>
+  </div>
 </section>
 `;

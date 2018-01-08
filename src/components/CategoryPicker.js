@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Button from './Button';
 
 const categories = ['Animals', 'Transportation', 'Nature', 'Sport'];
 
@@ -13,21 +14,21 @@ class CategoryPicker extends Component {
     return (
       <section>
         <h1 className="title">Pick category</h1>
-        <ul className="list-unstyled list-inline category-picker">
+        <div className="module category-picker">
           {categories.map(category => {
             return (
-              <li
+              <Button
                 key={category}
-                className={`list-inline-item ${
-                  this.props.currentCategory === category ? 'active' : ''
+                className={`btn btn--tertiary btn--sm ${
+                  this.props.currentCategory === category ? 'btn--tertiary-active' : ''
                 }`}
                 onClick={() => this.props.onChange(category)}
               >
                 {category}
-              </li>
+              </Button>
             );
           })}
-        </ul>
+        </div>
       </section>
     );
   }

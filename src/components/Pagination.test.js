@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Pagination from './Pagination';
 
 it('Pagination renders correctly', () => {
@@ -12,11 +11,10 @@ it('Pagination renders correctly', () => {
     },
   };
 
-  let component = renderer.create(
+  let wrapper = shallow(
     <Pagination {...props} />,
   );
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   props = {
     page: 1,
@@ -26,9 +24,8 @@ it('Pagination renders correctly', () => {
     },
   };
   // re-rendering
-  component = renderer.create(
+  wrapper = shallow(
     <Pagination {...props} />,
   );
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });

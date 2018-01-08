@@ -1,8 +1,7 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Footer from './Footer';
 
 it('Footer renders correctly', () => {
-  const tree = renderer.create(<Footer />).toJSON();
-  expect(tree).toMatchSnapshot();
+  const wrapper = shallow(<Footer />);
+  expect(wrapper).toMatchSnapshot();
 });

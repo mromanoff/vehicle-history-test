@@ -1,6 +1,6 @@
 {
   "name": "vehiclehistory",
-  "version": "0.1.0",
+  "version": "0.1.1-",
   "private": true,
   "dependencies": {
     "node-sass-chokidar": "^0.0.3",
@@ -19,6 +19,13 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.2.0"
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.0"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

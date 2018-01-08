@@ -2331,11 +2331,13 @@ hr {
     background: #ffffff;
     color: #222222; }
   .btn--tertiary {
-    border-color: #222222;
-    background: #222222;
+    background: #647062;
+    color: #ffffff; }
+  .btn--tertiary-active {
+    background: #aebc93;
     color: #ffffff; }
   .btn--sm {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     padding: 0.5rem 1rem; }
   .btn--inline-block {
     display: inline-block; }
@@ -2657,14 +2659,6 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center; }
-  .category-picker > li {
-    color: #ffffff;
-    background-color: #647062;
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    font-size: .85rem; }
-  .category-picker > li.active {
-    background-color: #aebc93; }
 
 /**
  * components/_overvie-page.scss

@@ -10,16 +10,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  & > li {
-    color: $color-white;
-    background-color: $color-brand-secondary3;
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    font-size: .85rem;
-  }
-
-  & > li.active {
-    background-color: $color-brand-secondary2;
-  }
 }

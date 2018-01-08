@@ -49,13 +49,17 @@
   }
 
   @include modifier('tertiary') {
-    border-color: $color-gray-darker;
-    background: $color-gray-darker;
+    background: $color-brand-secondary3;
+    color: $color-white;
+  }
+
+  @include modifier('tertiary-active') {
+    background: $color-brand-secondary2;
     color: $color-white;
   }
 
   @include modifier('sm') {
-    font-size: $font-sm;
+    font-size: $font-xs;
     padding: $padding-sm $padding-md;
   }
 
