@@ -87,3 +87,5 @@ exports[`Pagination renders correctly 1`] = `
   </ul>
 </div>
 `;
+
+exports[`Pagination renders correctly 2`] = `null`;

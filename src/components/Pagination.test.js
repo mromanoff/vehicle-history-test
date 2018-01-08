@@ -8,16 +8,27 @@ it('Pagination renders correctly', () => {
     page: 1,
     itemsCountPerPage: 25,
     totalItemsCount: 100,
-    onChange: () => {},
+    onChange: () => {
+    },
   };
 
-  const tree = renderer.create(<Pagination {...props} />).toJSON();
+  let component = renderer.create(
+    <Pagination {...props} />,
+  );
+  let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
-  // // manually trigger the callback
-   props.totalItemsCount = 0;
-    // re-rendering
-  // tree = component.toJSON();
-  //expect(tree).toMatchSnapshot();
-
+  props = {
+    page: 1,
+    itemsCountPerPage: 25,
+    totalItemsCount: 0,
+    onChange: () => {
+    },
+  };
+  // re-rendering
+  component = renderer.create(
+    <Pagination {...props} />,
+  );
+  tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });

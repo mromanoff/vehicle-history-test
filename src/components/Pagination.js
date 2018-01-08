@@ -12,20 +12,18 @@ const ProviderPagination = ({
     ? 0
     : Math.ceil(totalItemsCount / itemsCountPerPage);
 
-  return (
-    pageCount > 1 && (
-      <div className="module">
-        <Pagination
-          innerClass="pagination"
-          activePage={page}
-          itemsCountPerPage={itemsCountPerPage}
-          totalItemsCount={totalItemsCount}
-          pageRangeDisplayed={3}
-          onChange={onChange}
-        />
-      </div>
-    )
-  );
+  return pageCount > 1 ? (
+    <div className="module">
+      <Pagination
+        innerClass="pagination"
+        activePage={page}
+        itemsCountPerPage={itemsCountPerPage}
+        totalItemsCount={totalItemsCount}
+        pageRangeDisplayed={3}
+        onChange={onChange}
+      />
+    </div>
+  ) : null;
 };
 
 export default ProviderPagination;
