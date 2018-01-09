@@ -3,7 +3,7 @@
 exports[`Categories renders correctly 1`] = `
 <section>
   <CategoryPicker
-    currentCategory=""
+    currentCategory="Animals"
     onChange={[Function]}
   />
 </section>

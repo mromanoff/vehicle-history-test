@@ -1,43 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CategoryPicker renders correctly 1`] = `
-<section>
-  <h1
-    className="title"
-  >
-    Pick category
-  </h1>
-  <div
-    className="module category-picker"
-  >
-    <Button
-      className="btn btn--tertiary btn--sm btn--tertiary-active"
-      key="Animals"
-      onClick={[Function]}
+<CategoryPicker
+  currentCategory="Animals"
+  onChange={[Function]}
+>
+  <section>
+    <h1
+      className="title"
     >
-      Animals
-    </Button>
-    <Button
-      className="btn btn--tertiary btn--sm "
-      key="Transportation"
-      onClick={[Function]}
+      Pick category
+    </h1>
+    <div
+      className="module category-picker"
     >
-      Transportation
-    </Button>
-    <Button
-      className="btn btn--tertiary btn--sm "
-      key="Nature"
-      onClick={[Function]}
+      <Button
+        className="btn btn--tertiary btn--sm btn--tertiary-active"
+        key="Animals"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm btn--tertiary-active"
+          onClick={[Function]}
+        >
+          Animals
+        </button>
+      </Button>
+      <Button
+        className="btn btn--tertiary btn--sm "
+        key="Transportation"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm "
+          onClick={[Function]}
+        >
+          Transportation
+        </button>
+      </Button>
+      <Button
+        className="btn btn--tertiary btn--sm "
+        key="Nature"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm "
+          onClick={[Function]}
+        >
+          Nature
+        </button>
+      </Button>
+      <Button
+        className="btn btn--tertiary btn--sm "
+        key="Sport"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm "
+          onClick={[Function]}
+        >
+          Sport
+        </button>
+      </Button>
+    </div>
+  </section>
+</CategoryPicker>
+`;
+
+exports[`CategoryPicker renders correctly 2`] = `
+<CategoryPicker
+  currentCategory="Transportation"
+  onChange={[Function]}
+>
+  <section>
+    <h1
+      className="title"
     >
-      Nature
-    </Button>
-    <Button
-      className="btn btn--tertiary btn--sm "
-      key="Sport"
-      onClick={[Function]}
+      Pick category
+    </h1>
+    <div
+      className="module category-picker"
     >
-      Sport
-    </Button>
-  </div>
-</section>
+      <Button
+        className="btn btn--tertiary btn--sm "
+        key="Animals"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm "
+          onClick={[Function]}
+        >
+          Animals
+        </button>
+      </Button>
+      <Button
+        className="btn btn--tertiary btn--sm btn--tertiary-active"
+        key="Transportation"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm btn--tertiary-active"
+          onClick={[Function]}
+        >
+          Transportation
+        </button>
+      </Button>
+      <Button
+        className="btn btn--tertiary btn--sm "
+        key="Nature"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm "
+          onClick={[Function]}
+        >
+          Nature
+        </button>
+      </Button>
+      <Button
+        className="btn btn--tertiary btn--sm "
+        key="Sport"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm "
+          onClick={[Function]}
+        >
+          Sport
+        </button>
+      </Button>
+    </div>
+  </section>
+</CategoryPicker>
 `;

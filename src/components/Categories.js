@@ -3,16 +3,18 @@ import Loader from './Loader';
 import Photo from './Photo';
 import CategoryPicker from './CategoryPicker';
 import Pagination from './Pagination';
+import { CATEGORIES } from '../constants';
 
 class Categories extends Component {
   constructor() {
     super();
     this.state = {
       isLoading: false,
-      currentCategory: '',
+      currentCategory: CATEGORIES[0],
       photos: [],
       page: 1,
     };
+    //this.fetchPhotos();
   }
 
   fetchPhotos = () => {
