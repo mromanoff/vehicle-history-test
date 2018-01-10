@@ -4,6 +4,7 @@ import Photo from './Photo';
 import CategoryPicker from './CategoryPicker';
 import Pagination from './Pagination';
 import { CATEGORIES } from '../constants';
+import request from '../request';
 
 class Categories extends Component {
   constructor() {
@@ -13,37 +14,37 @@ class Categories extends Component {
       currentCategory: CATEGORIES[0],
       photos: [],
       page: 1,
+      error: '',
+      isError: false,
     };
     //this.fetchPhotos();
   }
 
-  fetchPhotos = () => {
-    this.setState({ isLoading: true });
-    (async () => {
-      try {
-        const response = await fetch(
-          `https://api.500px.com/v1/photos?feature=popular&rpp=20&image_size=440&exclude=Nude&only=${
-            this.state.currentCategory
-          }&page=${
-            this.state.page
-          }&consumer_key=vRemLRvbgOrkPsJhzeoGdSNHiuC22aZ4TgwgXQXK`,
-        );
-        const data = await response.json();
+  fetchPhotos = async () => {
+    const url = `https://api.500px.com/v1/photos?feature=popular&rpp=20&image_size=440&exclude=Nude&only=${
+      this.state.currentCategory
+    }&page=${
+      this.state.page
+    }&consumer_key=vRemLRvbgOrkPsJhzeoGdSNHiuC22aZ4TgwgXQXK`;
 
-        this.setState({
-          photos: data.photos,
-          itemsCountPerPage: 20,
-          totalItemsCount: data.total_items,
-          isLoading: false,
-        });
-      } catch (error) {
-        this.setState({
-          photos: [],
-          isLoading: false,
-        });
-        throw Error(error);
-      }
-    })();
+    this.setState({ isLoading: true });
+
+    try {
+      const data = await request.fetchPhotos(url);
+      this.setState({
+        photos: data.photos,
+        itemsCountPerPage: 20,
+        totalItemsCount: data.total_items,
+        isLoading: false,
+      });
+    } catch (error) {
+      this.setState({
+        photos: [],
+        isLoading: false,
+        error: error.message,
+        isError: true,
+      });
+    }
   };
 
   handleCategory = currentCategory => {
@@ -63,6 +64,7 @@ class Categories extends Component {
         />
 
         {this.state.isLoading && <Loader />}
+        {this.state.isError && <div>Error: ${this.state.error}</div>}
         {this.state.photos.length > 0 && (
           <div className={this.state.isLoading ? 'loading' : 'loaded'}>
             <Pagination {...this.state} onChange={this.handlePagination} />
