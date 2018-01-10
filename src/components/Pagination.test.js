@@ -62,4 +62,6 @@ it('Pagination renders correctly', () => {
   expect(wrapper.props().totalItemsCount).toEqual(0);
   expect(wrapper).toMatchSnapshot();
 
+  expect(wrapper.find('li').length).toEqual(0);
+
 });
