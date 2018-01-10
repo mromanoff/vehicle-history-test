@@ -8,22 +8,22 @@ const ProviderPagination = ({
   totalItemsCount,
   onChange,
 }) => {
-  const pageCount = isNaN(Math.ceil(totalItemsCount / itemsCountPerPage))
-    ? 0
-    : Math.ceil(totalItemsCount / itemsCountPerPage);
+  const pageCount = Math.ceil(totalItemsCount / itemsCountPerPage);
 
-  return pageCount > 1 ? (
-    <div className="module">
-      <Pagination
-        innerClass="pagination"
-        activePage={page}
-        itemsCountPerPage={itemsCountPerPage}
-        totalItemsCount={totalItemsCount}
-        pageRangeDisplayed={3}
-        onChange={onChange}
-      />
-    </div>
-  ) : null;
+  return (
+    pageCount > 1 && (
+      <div className="module">
+        <Pagination
+          innerClass="pagination"
+          activePage={page}
+          itemsCountPerPage={itemsCountPerPage}
+          totalItemsCount={totalItemsCount}
+          pageRangeDisplayed={3}
+          onChange={onChange}
+        />
+      </div>
+    )
+  );
 };
 
 export default ProviderPagination;
