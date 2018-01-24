@@ -19,20 +19,19 @@ class Categories extends Component {
     };
   }
 
-  componentDidMount() {
-    //this.fetchPhotos();
-  }
+  // componentDidMount() {
+  //   //this.fetchPhotos();
+  // }
 
-  fetchPhotos = async () => {
+  fetchPhotos = async (...args) => {
     const url = `https://api.500px.com/v1/photos?feature=popular&rpp=20&image_size=440&exclude=Nude&only=${
       this.state.currentCategory
     }&page=${
       this.state.page
     }&consumer_key=vRemLRvbgOrkPsJhzeoGdSNHiuC22aZ4TgwgXQXK`;
 
-    this.setState({ isLoading: true });
-
     try {
+      this.setState({ isLoading: true, error: false });
       const data = await request.fetchPhotos(url);
       this.setState({
         photos: data.photos,
@@ -72,7 +71,7 @@ class Categories extends Component {
           <div className={this.state.isLoading ? 'loading' : 'loaded'}>
             <Pagination {...this.state} onChange={this.handlePagination} />
 
-            <div className="module gallery test">
+            <div className="module gallery">
               {this.state.photos.map(photo => (
                 <Photo key={photo.id} photo={photo} />
               ))}

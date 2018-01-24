@@ -4,6 +4,9 @@ import './styles/main.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Categories from './components/Categories';
+import Gallery from './Gallery';
+import Gallery2 from './Gallery2';
+import { CATEGORIES } from './constants';
 
 class App extends Component {
   render() {
@@ -11,7 +14,13 @@ class App extends Component {
       <div className="application">
         <Header />
         <main className="container">
-          <Categories />
+          {/*<Gallery initialQuery="dog"/>*/}
+          <Gallery2
+            initialCategory="Animals"
+            initialPage="1"
+            categories={CATEGORIES}
+          />
+          {/*<Categories initialCategory="Animals" />*/}
         </main>
         <Footer />
       </div>
