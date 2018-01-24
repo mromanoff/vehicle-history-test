@@ -17,6 +17,9 @@ class Categories extends Component {
       error: '',
       isError: false,
     };
+  }
+
+  componentDidMount() {
     //this.fetchPhotos();
   }
 

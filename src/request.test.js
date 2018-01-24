@@ -4,7 +4,7 @@ import request from './request';
 
 describe('can fetch photos', () => {
   afterEach(() => {
-    // Unmock.
+    fetchMock.reset();
     fetchMock.restore();
   });
 
@@ -14,18 +14,18 @@ describe('can fetch photos', () => {
     expect(response.picture).toEqual('world');
   });
 
-  // it('handles errors', async () => {
-  //   fetchMock.get('http://bad.url', {
-  //       status: 400,
-  //       body: JSON.stringify('bad data'),
-  //       throws: true
-  //     })
-  //     .catch(error => {
-  //       return new Error(error);
-  //     });
-  //
-  //   const response = await request.fetchPhotos('http://fake.com');
-  //
-  //   expect((response) => drinkFlavor('octopus')).toThrow();
-  // });
+  it('handles errors', async () => {
+    fetchMock.get('http://bad.url', {
+        status: 400,
+        body: JSON.stringify('bad data'),
+        throws: true
+      })
+      .catch(error => {
+        return new Error(error);
+      });
+
+    const response = await request.fetchPhotos('http://fake.com');
+
+    expect((response) => drinkFlavor('octopus')).toThrow();
+  });
 });
