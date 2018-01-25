@@ -5,22 +5,22 @@ import Button from '../components/Button';
 class CategoryPicker extends Component {
   static propTypes = {
     categories: PropTypes.array.isRequired,
-    initialCategory: PropTypes.string.isRequired,
-    onCategoryPick: PropTypes.func.isRequired,
+    currentCategory: PropTypes.string.isRequired,
+    onCategoryChange: PropTypes.func.isRequired,
   };
 
   state = {};
 
   onClick(category) {
-    this.props.onCategoryPick(category);
+    this.props.onCategoryChange(category);
     this.setState({ category: category });
   }
 
   componentDidMount() {
-    const { onCategoryPick, initialCategory } = this.props;
-    if (initialCategory) {
-      this.setState({ category: initialCategory });
-      onCategoryPick(initialCategory);
+    const { onCategoryChange, currentCategory } = this.props;
+    if (currentCategory) {
+      this.setState({ category: currentCategory });
+      onCategoryChange(currentCategory);
     }
   }
 

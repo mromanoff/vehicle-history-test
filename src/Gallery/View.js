@@ -1,48 +1,72 @@
-import React, { Component } from 'react';
-import SearchInput from './SearchInput';
-import Image from './Image';
-import Loading from './Loading';
-import Error from './Error';
+import React from 'react';
+import Loader from '../components/Loader';
+import Error from '../components/Error';
+import Pagination from './Pagination';
+import CategoryPicker from './CategoryPicker';
+import Photo from './Photo';
+
 const View = ({
-  loading,
-  error,
+  isLoading,
+  isError,
   data,
-  initialQuery,
-  onLoad,
-  RenderSearchInput,
-  RenderImage,
-  RenderLoading,
+  error,
+  categories,
+  currentCategory,
+  onCategoryChange,
+  onPageChange,
+  RenderPagination,
+  RenderPhoto,
+  RenderCategoryPicker,
+  RenderLoader,
   RenderError,
 }) => (
   <div>
-    <RenderSearchInput initialQuery={initialQuery} onSearch={onLoad} />
+    <RenderCategoryPicker
+      categories={categories}
+      currentCategory={currentCategory}
+      onCategoryChange={onCategoryChange}
+    />
     <section>
-      {loading && <RenderLoading />}
+      {isLoading && <RenderLoader />}
+      {isError && <RenderError error={error} />}
 
-      {error && <RenderError error={error} />}
+      <div className={isLoading ? 'loading' : 'loaded'}>
+        {data && (
+          <div>
 
-      {data && <RenderImage src={data} />}
+            <RenderPagination
+              currentPage={data.current_page}
+              totalItemsCount={data.total_items}
+              itemsCountPerPage={data.photos.length}
+              onChange={onPageChange}
+            />
 
-      {/*{*/}
-      {/*do {*/}
-      {/*if (loading) {*/}
-      {/*<RenderLoading />;*/}
-      {/*} else if (error) {*/}
-      {/*<RenderError error={error} />;*/}
-      {/*} else {*/}
-      {/*<RenderImage src={data} />;*/}
-      {/*}*/}
-      {/*}*/}
-      {/*}*/}
+            <div className="module gallery">
+              {data.photos.map(photo => (
+                <RenderPhoto key={photo.id} photo={photo} />
+              ))}
+            </div>
+
+            <RenderPagination
+              currentPage={data.current_page}
+              totalItemsCount={data.total_items}
+              itemsCountPerPage={data.photos.length}
+              onChange={onPageChange}
+            />
+
+          </div>
+        )}
+      </div>
     </section>
   </div>
 );
 View.propTypes = {};
 
 View.defaultProps = {
-  RenderSearchInput: SearchInput,
-  RenderImage: Image,
-  RenderLoading: Loading,
+  RenderCategoryPicker: CategoryPicker,
+  RenderPhoto: Photo,
+  RenderPagination: Pagination,
+  RenderLoader: Loader,
   RenderError: Error,
 };
 

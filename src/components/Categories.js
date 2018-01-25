@@ -23,7 +23,7 @@ class Categories extends Component {
   //   //this.fetchPhotos();
   // }
 
-  fetchPhotos = async (...args) => {
+  fetchPhotos = async () => {
     const url = `https://api.500px.com/v1/photos?feature=popular&rpp=20&image_size=440&exclude=Nude&only=${
       this.state.currentCategory
     }&page=${
