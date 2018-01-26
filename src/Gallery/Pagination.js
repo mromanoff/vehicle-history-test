@@ -11,7 +11,7 @@ const ProviderPagination = ({
   const pageCount = Math.ceil(totalItemsCount / itemsCountPerPage);
 
   return (
-    // pageCount > 1 && (
+    pageCount > 1 && (
       <div className="module">
         <Pagination
           innerClass="pagination"
@@ -22,7 +22,7 @@ const ProviderPagination = ({
           onChange={onChange}
         />
       </div>
-    // )
+    )
   );
 };
 

@@ -14,7 +14,8 @@ class App extends Component {
         <main className="container">
           <Gallery
             initialCategory="Animals"
-            initialPage="1"
+            initialPage={1}
+            itemsCountPerPage={20}
             categories={CATEGORIES}
           />
         </main>

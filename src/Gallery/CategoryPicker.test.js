@@ -1,6 +1,6 @@
 import React from 'react';
 import CategoryPicker from './CategoryPicker';
-import { CATEGORIES } from '../constants';
+import { CATEGORIES } from '../constants/index';
 
 it('CategoryPicker renders correctly', () => {
   let wrapper = mount(

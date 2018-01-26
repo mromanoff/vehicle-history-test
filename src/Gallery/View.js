@@ -8,12 +8,15 @@ import Photo from './Photo';
 const View = ({
   isLoading,
   isError,
-  data,
+  photos,
   error,
   categories,
   currentCategory,
   onCategoryChange,
   onPageChange,
+  currentPage,
+  totalItemsCount,
+  itemsCountPerPage,
   RenderPagination,
   RenderPhoto,
   RenderCategoryPicker,
@@ -31,26 +34,26 @@ const View = ({
       {isError && <RenderError error={error} />}
 
       <div className={isLoading ? 'loading' : 'loaded'}>
-        {data && (
+        {photos && (
           <div>
 
             <RenderPagination
-              currentPage={data.current_page}
-              totalItemsCount={data.total_items}
-              itemsCountPerPage={data.photos.length}
+              currentPage={currentPage}
+              totalItemsCount={totalItemsCount}
+              itemsCountPerPage={itemsCountPerPage}
               onChange={onPageChange}
             />
 
             <div className="module gallery">
-              {data.photos.map(photo => (
+              {photos.map(photo => (
                 <RenderPhoto key={photo.id} photo={photo} />
               ))}
             </div>
 
             <RenderPagination
-              currentPage={data.current_page}
-              totalItemsCount={data.total_items}
-              itemsCountPerPage={data.photos.length}
+              currentPage={currentPage}
+              totalItemsCount={totalItemsCount}
+              itemsCountPerPage={itemsCountPerPage}
               onChange={onPageChange}
             />
 
