@@ -25,9 +25,9 @@ class Categories extends Component {
 
   fetchPhotos = async () => {
     const url = `https://api.500px.com/v1/photos?feature=popular&rpp=20&image_size=440&exclude=Nude&only=${
-      this.state.currentCategory
+      encodeURIComponent(this.state.currentCategory)
     }&page=${
-      this.state.page
+      encodeURIComponent(this.state.page)
     }&consumer_key=vRemLRvbgOrkPsJhzeoGdSNHiuC22aZ4TgwgXQXK`;
 
     this.setState({ isLoading: true });
