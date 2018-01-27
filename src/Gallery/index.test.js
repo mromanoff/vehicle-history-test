@@ -1,11 +1,11 @@
 import React from 'react';
-import Categories from './Categories';
+import Gallery from './index';
 
 it('Categories renders correctly', () => {
-  const wrapper = shallow(<Categories />);
+  const wrapper = shallow(<Gallery />);
 
   //const fetchPhotos = jest.fn();
 
-  //expect(wrapper).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 

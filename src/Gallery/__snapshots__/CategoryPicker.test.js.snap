@@ -2,8 +2,17 @@
 
 exports[`CategoryPicker renders correctly 1`] = `
 <CategoryPicker
-  currentCategory="Animals"
-  onChange={[Function]}
+  categories={
+    Array [
+      "Modeling",
+      "Animals",
+      "Transportation",
+      "Nature",
+      "Sport",
+    ]
+  }
+  currentCategory="Modeling"
+  onCategoryChange={[Function]}
 >
   <section>
     <h1
@@ -16,11 +25,23 @@ exports[`CategoryPicker renders correctly 1`] = `
     >
       <Button
         className="btn btn--tertiary btn--sm btn--tertiary-active"
-        key="Animals"
+        key="Modeling"
         onClick={[Function]}
       >
         <button
           className="btn btn--tertiary btn--sm btn--tertiary-active"
+          onClick={[Function]}
+        >
+          Modeling
+        </button>
+      </Button>
+      <Button
+        className="btn btn--tertiary btn--sm "
+        key="Animals"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm "
           onClick={[Function]}
         >
           Animals
@@ -69,8 +90,17 @@ exports[`CategoryPicker renders correctly 1`] = `
 
 exports[`CategoryPicker renders correctly 2`] = `
 <CategoryPicker
-  currentCategory="Transportation"
-  onChange={[Function]}
+  categories={
+    Array [
+      "Modeling",
+      "Animals",
+      "Transportation",
+      "Nature",
+      "Sport",
+    ]
+  }
+  currentCategory="Animals"
+  onCategoryChange={[Function]}
 >
   <section>
     <h1
@@ -83,23 +113,35 @@ exports[`CategoryPicker renders correctly 2`] = `
     >
       <Button
         className="btn btn--tertiary btn--sm "
-        key="Animals"
+        key="Modeling"
         onClick={[Function]}
       >
         <button
           className="btn btn--tertiary btn--sm "
           onClick={[Function]}
         >
-          Animals
+          Modeling
         </button>
       </Button>
       <Button
         className="btn btn--tertiary btn--sm btn--tertiary-active"
-        key="Transportation"
+        key="Animals"
         onClick={[Function]}
       >
         <button
           className="btn btn--tertiary btn--sm btn--tertiary-active"
+          onClick={[Function]}
+        >
+          Animals
+        </button>
+      </Button>
+      <Button
+        className="btn btn--tertiary btn--sm "
+        key="Transportation"
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn--tertiary btn--sm "
           onClick={[Function]}
         >
           Transportation

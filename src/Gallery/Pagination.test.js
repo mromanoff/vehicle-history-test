@@ -4,7 +4,7 @@ import Pagination from './Pagination';
 it('Pagination renders correctly', () => {
 
   let props = {
-    page: 1,
+    currentPage: 1,
     itemsCountPerPage: 25,
     totalItemsCount: 100,
     onChange: () => {
@@ -14,7 +14,7 @@ it('Pagination renders correctly', () => {
   let wrapper = mount(
     <Pagination {...props} />,
   );
-  expect(wrapper.props().page).toEqual(1);
+  expect(wrapper.props().currentPage).toEqual(1);
   expect(wrapper).toMatchSnapshot();
 
   expect(
@@ -26,7 +26,7 @@ it('Pagination renders correctly', () => {
 
   // Test paginator with second page selected
   props = {
-    page: 2,
+    currentPage: 2,
     itemsCountPerPage: 25,
     totalItemsCount: 100,
     onChange: () => {
@@ -36,7 +36,7 @@ it('Pagination renders correctly', () => {
   wrapper = mount(
     <Pagination {...props} />,
   );
-  expect(wrapper.props().page).toEqual(2);
+  expect(wrapper.props().currentPage).toEqual(2);
   expect(wrapper).toMatchSnapshot();
 
   expect(
@@ -49,7 +49,7 @@ it('Pagination renders correctly', () => {
 
   // Test paginator with 0 items
   props = {
-    page: 1,
+    currentPage: 1,
     itemsCountPerPage: 25,
     totalItemsCount: 0,
     onChange: () => {

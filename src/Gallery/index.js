@@ -19,14 +19,6 @@ class Categories extends Component {
     };
   }
 
-  normalizeData = data => {
-    this.setState({
-      photos: data.photos,
-      currentPage: data.current_page,
-      totalItemsCount: data.total_items,
-    });
-  };
-
   load = async () => {
     const url = `${URL}&page=${this.state.currentPage}&only=${
       this.state.currentCategory
@@ -36,7 +28,7 @@ class Categories extends Component {
       this.setState({ isLoading: true, error: false });
       const data = await request.fetchPhotos(url);
       this.setState({ isLoading: false });
-      this.normalizeData(data);
+      this.normalizeApi(data);
     } catch (error) {
       this.setState({ isLoading: false, error: true });
     }
@@ -55,6 +47,14 @@ class Categories extends Component {
 
   handlePagination = currentPage => {
     this.setState({ currentPage }, this.load);
+  };
+
+  normalizeApi = data => {
+    this.setState({
+      photos: data.photos,
+      currentPage: data.current_page,
+      totalItemsCount: data.total_items,
+    });
   };
 
   render() {

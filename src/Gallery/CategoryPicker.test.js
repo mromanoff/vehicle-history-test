@@ -4,10 +4,10 @@ import { CATEGORIES } from '../constants/index';
 
 it('CategoryPicker renders correctly', () => {
   let wrapper = mount(
-    <CategoryPicker currentCategory={'Animals'} onChange={() => {}} />,
+    <CategoryPicker categories={CATEGORIES} currentCategory={CATEGORIES[0]} onCategoryChange={() => {}} />,
   );
 
-  expect(wrapper.props().currentCategory).toEqual('Animals');
+  expect(wrapper.props().currentCategory).toEqual(CATEGORIES[0]);
   expect(wrapper).toMatchSnapshot();
 
   // it render all category buttons buttons
@@ -22,9 +22,9 @@ it('CategoryPicker renders correctly', () => {
   ).toEqual(true);
 
   wrapper = mount(
-    <CategoryPicker currentCategory={'Transportation'} onChange={() => {}} />,
+    <CategoryPicker categories={CATEGORIES} currentCategory={CATEGORIES[1]} onCategoryChange={() => {}} />,
   );
-  expect(wrapper.props().currentCategory).toEqual('Transportation');
+  expect(wrapper.props().currentCategory).toEqual(CATEGORIES[1]);
 
   wrapper.find('button').at(1).simulate('click');
 

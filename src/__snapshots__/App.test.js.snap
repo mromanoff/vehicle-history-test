@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders app 1`] = `
+<div
+  className="application"
+>
+  <Header />
+  <main
+    className="container"
+  >
+    <Categories
+      categories={
+        Array [
+          "Modeling",
+          "Animals",
+          "Transportation",
+          "Nature",
+          "Sport",
+        ]
+      }
+      initialCategory="Animals"
+      initialPage={1}
+      itemsCountPerPage={20}
+    />
+  </main>
+  <Footer />
+</div>
+`;
