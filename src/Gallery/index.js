@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
 import View from './View';
-import request from '../request';
-
-const URL =
-  'https://api.500px.com/v1/photos?feature=popular&&image_size=440&exclude=Nude&consumer_key=vRemLRvbgOrkPsJhzeoGdSNHiuC22aZ4TgwgXQXK';
+import loadData from './loadData';
 
 class Categories extends Component {
   constructor(props) {
@@ -20,13 +17,12 @@ class Categories extends Component {
   }
 
   load = async () => {
-    const url = `${URL}&page=${this.state.currentPage}&only=${
-      this.state.currentCategory
-    }&rpp=${this.state.itemsCountPerPage}`;
-
     try {
       this.setState({ isLoading: true, error: false });
-      const data = await request.fetchPhotos(url);
+      const data = await loadData({
+        category: this.state.currentCategory,
+        page: this.state.currentPage
+      });
       this.setState({ isLoading: false });
       this.normalizeApi(data);
     } catch (error) {
