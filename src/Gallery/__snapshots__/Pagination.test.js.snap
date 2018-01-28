@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination renders correctly 1`] = `
-<ProviderPagination
+<GalleryPagination
+  currentPage={1}
   itemsCountPerPage={25}
   onChange={[Function]}
-  page={1}
   totalItemsCount={100}
 >
   <div
@@ -186,14 +186,14 @@ exports[`Pagination renders correctly 1`] = `
       </ul>
     </a>
   </div>
-</ProviderPagination>
+</GalleryPagination>
 `;
 
 exports[`Pagination renders correctly 2`] = `
-<ProviderPagination
+<GalleryPagination
+  currentPage={2}
   itemsCountPerPage={25}
   onChange={[Function]}
-  page={2}
   totalItemsCount={100}
 >
   <div
@@ -375,14 +375,14 @@ exports[`Pagination renders correctly 2`] = `
       </ul>
     </a>
   </div>
-</ProviderPagination>
+</GalleryPagination>
 `;
 
 exports[`Pagination renders correctly 3`] = `
-<ProviderPagination
+<GalleryPagination
+  currentPage={1}
   itemsCountPerPage={25}
   onChange={[Function]}
-  page={1}
   totalItemsCount={0}
 />
 `;

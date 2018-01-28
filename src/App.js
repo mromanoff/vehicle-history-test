@@ -3,7 +3,8 @@ import './styles/main.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Categories from './components/Categories';
+import Gallery from './Gallery';
+import { CATEGORIES } from './constants';
 
 class App extends Component {
   render() {
@@ -11,7 +12,12 @@ class App extends Component {
       <div className="application">
         <Header />
         <main className="container">
-          <Categories />
+          <Gallery
+            initialCategory="Animals"
+            initialPage={1}
+            itemsCountPerPage={20}
+            categories={CATEGORIES}
+          />
         </main>
         <Footer />
       </div>

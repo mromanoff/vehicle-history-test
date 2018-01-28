@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories renders correctly 1`] = `
+<View
+  RenderCategoryPicker={[Function]}
+  RenderError={[Function]}
+  RenderLoader={[Function]}
+  RenderPagination={[Function]}
+  RenderPhoto={[Function]}
+  currentPage={1}
+  error={null}
+  isError={false}
+  isLoading={false}
+  itemsCountPerPage={20}
+  onCategoryChange={[Function]}
+  onPageChange={[Function]}
+/>
+`;

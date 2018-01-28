@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Pagination from 'react-js-pagination';
 
-const ProviderPagination = ({
-  page,
+const GalleryPagination = ({
+  currentPage,
   itemsCountPerPage,
   totalItemsCount,
   onChange,
@@ -15,7 +15,7 @@ const ProviderPagination = ({
       <div className="module">
         <Pagination
           innerClass="pagination"
-          activePage={page}
+          activePage={currentPage}
           itemsCountPerPage={itemsCountPerPage}
           totalItemsCount={totalItemsCount}
           pageRangeDisplayed={3}
@@ -26,10 +26,10 @@ const ProviderPagination = ({
   );
 };
 
-export default ProviderPagination;
+export default GalleryPagination;
 
-ProviderPagination.propTypes = {
-  page: PropTypes.number.isRequired,
+GalleryPagination.propTypes = {
+  currentPage: PropTypes.number.isRequired,
   itemsCountPerPage: PropTypes.number.isRequired,
   totalItemsCount: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,

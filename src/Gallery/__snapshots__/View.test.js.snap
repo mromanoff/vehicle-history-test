@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders error view 1`] = `
+<div>
+  <CategoryPicker
+    categories={
+      Array [
+        "Modeling",
+        "Animals",
+        "Transportation",
+        "Nature",
+        "Sport",
+      ]
+    }
+    currentCategory="Modeling"
+    onCategoryChange={[Function]}
+  />
+  <section>
+    <LoadError />
+    <div
+      className="loaded"
+    />
+  </section>
+</div>
+`;
+
+exports[`renders loading view 1`] = `
+<div>
+  <CategoryPicker
+    categories={
+      Array [
+        "Modeling",
+        "Animals",
+        "Transportation",
+        "Nature",
+        "Sport",
+      ]
+    }
+    currentCategory="Modeling"
+    onCategoryChange={[Function]}
+  />
+  <section>
+    <Loader />
+    <div
+      className="loading"
+    />
+  </section>
+</div>
+`;
+
+exports[`renders view 1`] = `
+<div>
+  <CategoryPicker
+    categories={
+      Array [
+        "Modeling",
+        "Animals",
+        "Transportation",
+        "Nature",
+        "Sport",
+      ]
+    }
+    currentCategory="Modeling"
+    onCategoryChange={[Function]}
+  />
+  <section>
+    <div
+      className="loaded"
+    >
+      <div>
+        <GalleryPagination
+          currentPage={1}
+          itemsCountPerPage={25}
+          onChange={[Function]}
+          totalItemsCount={100}
+        />
+        <div
+          className="module gallery"
+        >
+          <Photo
+            key="1"
+            photo={
+              Object {
+                "id": 1,
+              }
+            }
+          />
+        </div>
+        <GalleryPagination
+          currentPage={1}
+          itemsCountPerPage={25}
+          onChange={[Function]}
+          totalItemsCount={100}
+        />
+      </div>
+    </div>
+  </section>
+</div>
+`;

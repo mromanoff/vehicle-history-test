@@ -1,8 +1,8 @@
 const fetchMock = require('fetch-mock');
 
-import request from './request';
+import loadData from './loadData';
 
-describe('can fetch photos', () => {
+describe('can fetch', () => {
   afterEach(() => {
     fetchMock.reset();
     fetchMock.restore();
@@ -10,7 +10,7 @@ describe('can fetch photos', () => {
 
   it('can fetch photos', async () => {
     fetchMock.get('http://fake.com', { picture: 'world' });
-    const response = await request.fetchPhotos('http://fake.com');
+    const response = await loadData({category: 'Animals', page: 1});
     expect(response.picture).toEqual('world');
   });
 
@@ -24,7 +24,7 @@ describe('can fetch photos', () => {
         return new Error(error);
       });
 
-    const response = await request.fetchPhotos('http://fake.com');
+    const response = await loadData('http://fake.com');
 
     expect((response) => drinkFlavor('octopus')).toThrow();
   });
