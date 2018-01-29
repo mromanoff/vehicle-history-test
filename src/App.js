@@ -9,6 +9,20 @@ import media from 'styled-media-query';
 import { CATEGORIES } from './constants';
 import theme from './theme';
 
+const Layout = styled.div`
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
+
+  ${media.between('medium', 'large')`
+    /* screen width is between 768px (medium) and 1170px (large) */
+      padding-top: 130px;
+  `} ${media.greaterThan('large')`
+    /* screen width is greater than 1170px (large) */
+    padding-top: 60px;
+  `};
+`;
+
 const Main = styled.main`
   padding: 0 ${props => props.theme.size.md};
 
@@ -24,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div>
+        <Layout>
           <Header />
           <Main>
             <Gallery
@@ -35,7 +49,7 @@ class App extends Component {
             />
           </Main>
           <Footer />
-        </div>
+        </Layout>
       </ThemeProvider>
     );
   }
