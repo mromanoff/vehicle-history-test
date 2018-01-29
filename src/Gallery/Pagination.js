@@ -39,6 +39,10 @@ const StyledPagination = styled.div`
         background-color: ${props => props.theme.color.primary5};
       }
 
+      &.disabled {
+        display: none;
+      }
+
       > a,
       span {
         color: ${props => props.theme.color.white};

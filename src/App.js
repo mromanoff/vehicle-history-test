@@ -4,9 +4,21 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Gallery from './Gallery';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import media from 'styled-media-query';
 import { CATEGORIES } from './constants';
 import theme from './theme';
+
+const Main = styled.main`
+  padding: 0 ${props => props.theme.size.md};
+
+  ${media.greaterThan('large')`
+    /* screen width is greater than 1170px (large) */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1170px; 
+  `};
+`;
 
 class App extends Component {
   render() {
@@ -14,14 +26,14 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <div>
           <Header />
-          <main className="container">
+          <Main>
             <Gallery
               initialCategory="Animals"
               initialPage={1}
               itemsCountPerPage={20}
               categories={CATEGORIES}
             />
-          </main>
+          </Main>
           <Footer />
         </div>
       </ThemeProvider>
