@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-//import { Facebook } from 'grommet-icons';
 
 const StyledFooter = styled.footer`
   color: #e9967a;

@@ -23,6 +23,24 @@ const theme = {
   'color-brand-warning': '#FF8C00',
   'color-brand-danger': '#D40D12',
   'color-brand-info': '#5BC0DE',
+
+  color: {
+    white: '#ffffff',
+    grayDarker: '#222222',
+    grayDark: '#343434',
+    gray: '#555555',
+    grayLight: '#999999',
+    grayLighter: '#EEEEEE',
+    primary1: '#94090D',
+    primary5: '#FFA000',
+  },
+  size: {
+    xs: '0.5rem',
+    sm: '0.75rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+  },
 };
 
 export default theme;

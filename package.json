@@ -1,9 +1,8 @@
 {
   "name": "vehiclehistory",
-  "version": "0.1.1-",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "grommet-icons": "^0.14.0",
     "node-sass-chokidar": "^0.0.3",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
