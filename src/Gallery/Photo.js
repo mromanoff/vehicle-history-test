@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-class Photo extends Component {
-  static propTypes = {
-    photo: PropTypes.object.isRequired,
-  };
-
-  render() {
-    const { images, name } = this.props.photo;
-    return (
-      <div className="gallery__item">
-        <img src={images[0].url} alt={name} className="full-width" />
-      </div>
-    );
+const Image = styled.img`
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: opacity 300ms ease-out;
+  &:hover {
+    opacity: 0.9;
   }
-}
+`;
+
+const Photo = ({ photo }) => (
+  <Image src={photo.images[0].url} alt={photo.name} />
+);
+
+Photo.propTypes = {
+  photo: PropTypes.object.isRequired,
+};
 
 export default Photo;

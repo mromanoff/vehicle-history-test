@@ -1,20 +1,57 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+//import { Facebook } from 'grommet-icons';
+
+const StyledFooter = styled.footer`
+  color: #e9967a;
+  background-color: #94090d;
+  min-height: 270px;
+  padding: 2rem 0;
+  text-align: center;
+`;
+
+const SocialIcons = styled.ul`
+  margin-bottom: 2rem;
+  padding: 0;
+`;
+
+const SocialIcon = styled.li`
+  display: inline-block;
+  margin: 0 0.5rem;
+`;
+
+const IconTwitter = styled.a`
+    &:before{
+      content: "\e6b1";
+    }
+`;
+
+const Separator = styled.hr`
+  border-color: #647062;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 2rem 0;
+`;
 
 class Footer extends Component {
   render() {
     return (
-      <footer role="contentinfo" className="footer">
-        <ul className="footer__social-icons">
-          <li>
-            <a
+      <StyledFooter role="contentinfo">
+
+        {/*<Facebook size='xlarge' />*/}
+
+        <SocialIcons>
+          <SocialIcon>
+            <IconTwitter
               target="_blank"
               rel="noopener noreferrer"
               title="twitter"
               href="#"
               className="icon-twitter"
             />
-          </li>
-          <li>
+          </SocialIcon>
+          <SocialIcon>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -22,8 +59,8 @@ class Footer extends Component {
               href="#"
               className="icon-github2"
             />
-          </li>
-          <li>
+          </SocialIcon>
+          <SocialIcon>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -31,8 +68,9 @@ class Footer extends Component {
               href="#"
               className="icon-linkedin"
             />
-          </li>
-        </ul>
+          </SocialIcon>
+        </SocialIcons>
+
         <ul className="footer__links">
           <li className="active">
             <a
@@ -58,11 +96,11 @@ class Footer extends Component {
             </a>
           </li>
         </ul>
-        <hr />
+        <Separator />
         <p className="footer__copyright">
           &copy; Copyright Romanoff.io 1998 — 2017 All Right Reserved.
         </p>
-      </footer>
+      </StyledFooter>
     );
   }
 }

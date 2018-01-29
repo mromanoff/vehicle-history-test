@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
 import Button from '../components/Button';
+
+const Title = styled.h1`
+  text-align: center;
+  font-weight: 200;
+  margin: 2rem auto;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+`;
 
 class CategoryPicker extends Component {
   static propTypes = {
@@ -27,8 +42,8 @@ class CategoryPicker extends Component {
   render() {
     return (
       <section>
-        <h1 className="title">Pick category</h1>
-        <div className="module category-picker">
+        <Title>Pick category</Title>
+        <Wrapper>
           {this.props.categories.map(category => {
             return (
               <Button
@@ -42,7 +57,7 @@ class CategoryPicker extends Component {
               </Button>
             );
           })}
-        </div>
+        </Wrapper>
       </section>
     );
   }

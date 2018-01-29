@@ -1,15 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BarLoader} from 'react-css-loaders';
 
-class Loader extends Component {
-  render() {
-    return (
-      <div className="loader-wrapper">
-        <div className="loader">
-          <div className="loader-inner" />
-        </div>
-      </div>
-    );
-  }
-}
+const Loader = () => <BarLoader size={7} color="#FF8C00"/>;
 
 export default Loader;
