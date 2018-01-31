@@ -1,1 +1,6 @@
 @import url(../node_modules/sanitize.css);
+
+body {
+  background-color: white;
+  font-family: sans-serif;
+}
