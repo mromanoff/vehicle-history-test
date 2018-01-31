@@ -10,8 +10,6 @@ ReactDOM.render(<App />, document.getElementById('root'));
 injectGlobal`
   body {
     background-color: white;
-    padding: 0;
-    margin: 0;
     font-family: sans-serif;
   }
 `;

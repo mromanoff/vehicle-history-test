@@ -2,7 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Button from '../components/Button';
+const Button = styled.button`
+  outline: none;
+  background: ${props =>
+    props.active ? props.theme.color.secondary4 : props.theme.color.secondary3};
+  color: ${props => props.theme.color.white};
+  transition: background-color 100ms ease-out 100ms;
+  font-size: ${props => props.theme.size.sm};
+  padding: ${props => props.theme.size.xs} ${props => props.theme.size.sm};
+
+  &:hover,
+  &.active {
+    background: ${props => props.theme.color.secondary4};
+  }
+`;
 
 const Title = styled.h1`
   text-align: center;
@@ -48,9 +61,7 @@ class CategoryPicker extends Component {
             return (
               <Button
                 key={category}
-                className={`btn btn--tertiary btn--sm ${
-                  this.state.category === category ? 'btn--tertiary-active' : ''
-                }`}
+                active={this.state.category === category}
                 onClick={() => this.onClick(category)}
               >
                 {category}

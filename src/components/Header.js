@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
   right: 0;
   left: 0;
   top: 0;
-  background-color: ${props => props.theme['color-brand-primary4']};
+  background-color: ${props => props.theme.color.primary4};
   
   ${media.between('medium', 'large')`
     /* screen width is between 768px (medium) and 1170px (large) */

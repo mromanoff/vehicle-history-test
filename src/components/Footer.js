@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
-  color: #e9967a;
-  background-color: #94090d;
+  color: ${props => props.theme.color.primary2};
+  background-color: ${props => props.theme.color.primary1};
   min-height: 270px;
   padding: 2rem 0;
   text-align: center;
@@ -37,9 +37,6 @@ class Footer extends Component {
   render() {
     return (
       <StyledFooter role="contentinfo">
-
-        {/*<Facebook size='xlarge' />*/}
-
         <SocialIcons>
           <SocialIcon>
             <IconTwitter

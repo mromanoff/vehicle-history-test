@@ -19,6 +19,7 @@ const StyledPagination = styled.div`
       color: ${props => props.theme.color.white};
       transition: background-color 100ms ease-out 100ms;
       display: flex;
+      flex-shrink: 0;
       align-items: center;
       justify-content: center;
       text-align: center;
