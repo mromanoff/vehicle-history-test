@@ -31,6 +31,7 @@ class Categories extends Component {
   };
 
   handleCategory = currentCategory => {
+    this.scrollTop();
     //on category change. set current page to 1.
     this.setState(
       {
@@ -39,9 +40,11 @@ class Categories extends Component {
       },
       this.load,
     );
+
   };
 
   handlePagination = currentPage => {
+    this.scrollTop();
     this.setState({ currentPage }, this.load);
   };
 
@@ -51,6 +54,10 @@ class Categories extends Component {
       currentPage: data.current_page,
       totalItemsCount: data.total_items,
     });
+  };
+
+  scrollTop = () => {
+    window.scrollTo(0, 0);
   };
 
   render() {
