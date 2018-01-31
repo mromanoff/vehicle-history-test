@@ -12,6 +12,7 @@ const StyledPagination = styled.div`
     padding: 0;
 
     > li {
+      cursor: pointer;
       margin-right: 0.5rem;
       border-radius: 50%;
       background-color: ${props => props.theme.color.grayLight};

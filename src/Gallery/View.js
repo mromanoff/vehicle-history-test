@@ -18,12 +18,15 @@ const Gallery = styled.div`
   ${media.between('medium', 'large')`
     /* screen width is between 768px (medium) and 1170px (large) */
     grid-template-columns: 1fr 1fr 1fr;
-  `} 
-
-  ${media.greaterThan('large')`
+  `} ${media.greaterThan('large')`
     /* screen width is greater than 1170px (large) */
     grid-template-columns: 1fr 1fr 1fr 1fr;
   `};
+`;
+
+const Wrapper = styled.div`
+  opacity: ${props => (props.loading ? 0 : 1)};
+  transition: all 300ms ease-in;
 `;
 
 const View = ({
@@ -54,7 +57,7 @@ const View = ({
       {isLoading && <RenderLoader />}
       {isError && <RenderError error={error} />}
 
-      <div className={isLoading ? 'loading' : 'loaded'}>
+      <Wrapper loading={isLoading}>
         {photos && (
           <div>
             <RenderPagination
@@ -78,7 +81,7 @@ const View = ({
             />
           </div>
         )}
-      </div>
+      </Wrapper>
     </section>
   </div>
 );

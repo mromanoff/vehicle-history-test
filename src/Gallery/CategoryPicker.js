@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Button = styled.button`
+  cursor: pointer;
   outline: none;
   background: ${props =>
     props.active ? props.theme.color.secondary4 : props.theme.color.secondary3};
@@ -21,6 +22,7 @@ const Title = styled.h1`
   text-align: center;
   font-weight: 200;
   margin: 2rem auto;
+  text-transform: uppercase;
 `;
 
 const Wrapper = styled.div`
