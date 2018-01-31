@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { ds } from '../designSystem';
 
 const Button = styled.button`
+  font-size: ${ds.fontSize('s')};
   cursor: pointer;
   outline: none;
   background: ${props =>
-    props.active ? props.theme.color.secondary4 : props.theme.color.secondary3};
+    props.active ? ds.color('secondary') : props.theme.color.secondary3};
   color: ${props => props.theme.color.white};
   transition: background-color 100ms ease-out 100ms;
-  font-size: ${props => props.theme.size.sm};
   padding: ${props => props.theme.size.xs} ${props => props.theme.size.sm};
 
   &:hover,
   &.active {
     background: ${props => props.theme.color.secondary4};
   }
-`;
-
-const Title = styled.h1`
-  text-align: center;
-  font-weight: 200;
-  margin: 2rem auto;
-  text-transform: uppercase;
 `;
 
 const Wrapper = styled.div`
@@ -57,7 +51,6 @@ class CategoryPicker extends Component {
   render() {
     return (
       <section>
-        <Title>Pick category</Title>
         <Wrapper>
           {this.props.categories.map(category => {
             return (

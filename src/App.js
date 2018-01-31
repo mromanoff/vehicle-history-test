@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import './styles/main.css';
+import { ds } from './designSystem';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -10,6 +10,10 @@ import { CATEGORIES } from './constants';
 import theme from './theme';
 
 const Layout = styled.div`
+  color: ${ds.color('dark')};
+  font-size: ${ds.fontSize('base')};
+  font-family: ${ds.get('type.fontFamily.system')};
+  
   height: 100%;
   width: 100%;
   padding-top: 50px;

@@ -7,6 +7,13 @@ import Pagination from './Pagination';
 import CategoryPicker from './CategoryPicker';
 import Photo from './Photo';
 
+const Title = styled.h1`
+  text-align: center;
+  font-weight: 200;
+  margin: 2rem auto;
+  text-transform: uppercase;
+`;
+
 const Gallery = styled.div`
   text-align: center;
   display: grid;
@@ -48,6 +55,7 @@ const View = ({
   RenderError,
 }) => (
   <div>
+    <Title>Gallery</Title>
     <RenderCategoryPicker
       categories={categories}
       currentCategory={currentCategory}
