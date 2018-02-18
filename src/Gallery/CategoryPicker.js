@@ -8,7 +8,7 @@ const Button = styled.button`
   cursor: pointer;
   outline: none;
   background: ${props =>
-    props.active ? ds.color('secondary') : props.theme.color.secondary3};
+    props.active ? ds.color('secondary', 'light') : props.theme.color.secondary3};
   color: ${props => props.theme.color.white};
   transition: background-color 100ms ease-out 100ms;
   padding: ${props => props.theme.size.xs} ${props => props.theme.size.sm};
@@ -16,7 +16,7 @@ const Button = styled.button`
 
   &:hover,
   &.active {
-    background: ${props => props.theme.color.secondary4};
+    background: ${ds.color('secondary', 'light')};
   }
 `;
 

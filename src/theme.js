@@ -29,11 +29,12 @@ const theme = {
     info: '#5BC0DE',
   },
   size: {
-    xs: '0.5rem',
-    sm: '0.75rem',
+    xs: '0.444rem',
+    sm: '0.667rem',
     md: '1rem',
     lg: '1.5rem',
-    xl: '2rem',
+    xl: '2.25rem',
+    xxl: '3.375rem',
   },
 };
 
